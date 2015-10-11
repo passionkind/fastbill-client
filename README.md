@@ -3,6 +3,8 @@ fastbill-client
 
 Promise based Fastbill client in node.js with additional convenience methods
 
+This is a fork of [https://github.com/passionkind/fastbill-client](https://github.com/passionkind/fastbill-client) which [has a pending PR](https://github.com/passionkind/fastbill-client/pull/2) that doesn't get merged. Hence a re-publish to npm is needed to get the updated code.
+
 RESTful API-Client for Fastbill that covers all existing interfaces by using a descriptor file. Based on the descriptor, the module generates a node-style API by using Q's promise implementation, request module and lodash.
 
 API USAGE
@@ -16,7 +18,7 @@ fastbill.bootstrap(username, password);
 ```
 
 ### Accessing fastbill's API
-After the client has set authentication details, it can be used by simply calling 
+After the client has set authentication details, it can be used by simply calling
 ```js
 fastbill.api.entity.verb
 ```
@@ -44,8 +46,8 @@ whereas those methods also accept multiple field values as an array:
 fastbill.api.invoice.getById(["ID1", "ID2", "ID3"], limit, offset)
 ```
 
-### CREATE, UPDATE, DELETE etc. 
-All other methods besides previously mentioned getters, accept a data object only that must reflect fastbill's API specification. 
+### CREATE, UPDATE, DELETE etc.
+All other methods besides previously mentioned getters, accept a data object only that must reflect fastbill's API specification.
 
 ```js
 fastbill.api.invoice.create({"CUSTOMER_ID": "XXXXXX", "ITEMS": [{"ARTICLE_NUMBER": "1", "QUANTITY": "4"}]})
@@ -83,7 +85,7 @@ API COVERAGE
 
 ```json
 { customer:
-   { 
+   {
      get: [Function],
      update: [Function],
      delete: [Function],
@@ -134,12 +136,12 @@ API COVERAGE
      sign: [Function],
      sendbyemail: [Function],
      sendbypost: [Function],
-     setpaid: [Function] 
+     setpaid: [Function]
     },
   item:
    { get: [Function],
      getByInvoiceId: [Function],
-     delete: [Function] 
+     delete: [Function]
     },
   recurring:
    { create: [Function],
@@ -155,7 +157,7 @@ API COVERAGE
      getByState: [Function],
      getByType: [Function],
      update: [Function],
-     delete: [Function] 
+     delete: [Function]
     },
   revenue:
    { create: [Function],
@@ -171,7 +173,7 @@ API COVERAGE
      getByState: [Function],
      getByType: [Function],
      update: [Function],
-     delete: [Function] 
+     delete: [Function]
     },
   expense:
    { create: [Function],
@@ -179,7 +181,7 @@ API COVERAGE
      getByInvoiceId: [Function],
      getByInvoiceNumber: [Function],
      getByMonth: [Function],
-     getByYear: [Function] 
+     getByYear: [Function]
     },
   article:
    { create: [Function],
@@ -187,7 +189,7 @@ API COVERAGE
      getByArticleNumber: [Function],
      getByNumber: [Function],
      update: [Function],
-     delete: [Function] 
+     delete: [Function]
     },
   document: { create: [Function] },
   project:
@@ -197,7 +199,7 @@ API COVERAGE
      getById: [Function],
      getByCustomerId: [Function],
      update: [Function],
-     delete: [Function] 
+     delete: [Function]
     },
   time:
    { create: [Function],
@@ -211,7 +213,11 @@ API COVERAGE
      getByEndDate: [Function],
      getByDate: [Function],
      update: [Function],
-     delete: [Function] 
-    } 
+     delete: [Function]
+    }
+  },
+  template:
+  {
+    get: [Function]
   }
 ```
